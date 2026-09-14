@@ -36,7 +36,7 @@ function animate() {
 requestAnimationFrame(animate);
 ```
 # React Examples
-
+```
 import { useEffect, useRef } from 'react';
 import Stats from 'performance-stats';
 
@@ -64,9 +64,11 @@ export function PerformanceMonitor() {
   return <div ref={containerRef} />;
 }
 
+```
 ## VueJs Examples
 
-``` <template>
+```
+ <template>
   <div ref="monitor"></div>
 </template>
 
@@ -112,3 +114,23 @@ function animate() {
   requestAnimationFrame(animate);
 }
 ```
+
+#Location Change
+```
+const stats = new Stats();
+stats.dom.style.position = 'fixed';
+stats.dom.style.bottom = '10px';
+stats.dom.style.right = '10px';
+stats.dom.style.opacity = '0.9';
+document.body.appendChild(stats.dom);
+```
+
+##🔖 Bookmarklet
+```
+javascript:(function(){var script=document.createElement('script');script.onload=function(){var stats=new Stats();document.body.appendChild(stats.dom);(function loop(){stats.update();requestAnimationFrame(loop)})()};script.src='https://cdn.jsdelivr.net/npm/performance-stats/build/stats.min.js';document.head.appendChild(script);})()
+```
+
+#⚠️ Important Notes
+##Chrome Memory Info: Launch Chrome with --enable-precise-memory-info to retrieve memory data
+##Production: Consider disabling in the production environment
+##Browser Support: All modern browsers (Chrome, Firefox, Safari, Edge)
