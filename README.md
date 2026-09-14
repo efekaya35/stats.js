@@ -100,6 +100,7 @@ onUnmounted(() => {
 ```
 
 ##Panel 
+```
 const stats = new Stats();
 const customPanel = stats.addPanel(new Stats.Panel('Custom', '#f0f', '#202'));
 stats.showPanel(3);
@@ -110,3 +111,4 @@ function animate() {
   stats.end();
   requestAnimationFrame(animate);
 }
+```
